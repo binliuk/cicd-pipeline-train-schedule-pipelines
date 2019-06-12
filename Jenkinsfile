@@ -4,7 +4,9 @@ pipeline {
         stage('Build') { 
             steps {
                 //build the app
-                ./gradlew build --no-daemon
+                echo "Starting the jenkins pipeline"
+                sh './gradlew build --no-daemon'
+                archiveArtifacts: artifact:
             }
         }       
     }
