@@ -6,7 +6,7 @@ pipeline {
                 //build the app
                 echo "Starting the jenkins pipeline"
                 sh './gradlew build --no-daemon'
-                archiveArtifacts: artifact:
+                archiveArtifacts artifacts: 'dist/trainSchedule.zip '
             }
         }       
     }
